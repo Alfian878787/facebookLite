@@ -12,9 +12,9 @@
 
 <body>
   <?php
-  // ini_set('display_errors', 1);
-  // ini_set('display_startup_errors', 1);
-  // error_reporting(E_ALL);
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
   function paramCheck($params)
   {
     foreach ($params as $param) {
@@ -59,6 +59,8 @@
         $command->bind_param('ssss', $_POST["Name"], $_POST["emailaddress"], password_hash($_POST["password"], PASSWORD_DEFAULT), strtolower($_POST["gender"]));
         $command->execute();
         $command->close();
+        header("Location: http://192.168.0.170/facebook/main/index.php");
+        exit();
       }
     } else {
       echo 'Password not strong anought';

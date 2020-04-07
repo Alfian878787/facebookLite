@@ -11,4 +11,6 @@ create table User(
 (64),
   PRIMARY KEY
 (`Id`)
+`Activated` TINYINT
+(1) DEFAULT 0,
 );
